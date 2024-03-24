@@ -1,0 +1,37 @@
+COFFEMAKER
+
+from gpio import *
+from time  import *
+def main ():
+	while True:
+		motion_sensor = digitalRead(9)
+		if motion_sensor == HIGH:
+			print("Someones Awake:")
+			print("Making Coffee...")
+			customWrite(1,1)
+			customWrite(2,1)
+			delay(6000)
+			print("Done ... Coffee is ready ")
+			customeWrite(1,0)
+			customWrite(2,0)
+		delay(100)
+if __name__ == "__main__":
+	main()
+
+
+Blinking leds
+
+from gpio import *
+from time import *
+
+def main():
+	pinMode(1, OUT)
+	print("Blinking")
+	while True:
+		digitalWrite(1, HIGH);
+		delay(1000)
+		digitalWrite(1, LOW);
+		delay(500)
+
+if __name__ == "__main__":
+	main()
